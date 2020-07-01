@@ -1,0 +1,26 @@
+Problem :
+You have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.
+Given n, find the total number of full staircase rows that can be formed.
+n is a non-negative integer and fits within the range of a 32-bit signed integer.
+
+Example 1:
+n = 5
+The coins can form the following rows:
+¤
+¤ ¤
+¤ ¤
+Because the 3rd row is incomplete, we return 2.
+
+Solution Explanation:
+
+In this approach I applied the concept of "Sum of N natural numbers".
+Firstly, I handled all the corner cases(For n = 0, 1, 2).
+Then I applied a loop upto "n" numbers and perform following 2 operations :
+1) add value of i to sum;
+2) compare "sum" to given input "N".
+    If sum == N. It means we have found exact solution that forms proper staircase.
+    So, return "i".
+    If sum > N. It means the proper staircase will be formed upto number "i-1" for given input "N".
+    So, return "i-1".
+
+** Take type as "long" of variable "sum". Otherwise, it will give error for large input values.
