@@ -21,6 +21,6 @@ Then I applied a loop upto "n" numbers and perform following 2 operations :
     If sum == N. It means we have found exact solution that forms proper staircase.
     So, return "i".
     If sum > N. It means the proper staircase will be formed upto number "i-1" for given input "N".
-    So, return "i-1".
+    So, return "i-1"..
 
 ** Take type as "long" of variable "sum". Otherwise, it will give error for large input values.
