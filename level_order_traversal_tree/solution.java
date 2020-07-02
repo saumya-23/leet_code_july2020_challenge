@@ -52,11 +52,7 @@ class Solution {
                 levelQueue.offer(level+1);
             }
         }
-        List<List<Integer>> result1 = new ArrayList<>();
-        for(int i=result.size()-1;i>=0;i--)
-        {
-            result1.add(result.get(i));
-        }
-    return result1;
+        Collections.reverse(result);
+    return result
     }
 }
