@@ -1,25 +1,24 @@
 class Solution {
-    public int[] prisonAfterNDays(int[] cells, int N) {
-        int first[] = new int[8];
+    public int[] prisonAfterNDays(final int[] cells, int N) {
+        final int first[] = new int[8];
         first[0] = 0;
         first[7] = 0;
-        
-            for(int j=1;j<7;j++)
-            {
-                if(cells[j-1] == cells[j+1])
-                    first[j] = 1;
-                else
-                    first[j] = 0; 
-            }
-        int count=1;
-        
-        N-=1;
-        
-        for(int i=0; i<8; i++)
+
+        for (int j = 1; j < 7; j++) {
+            if (cells[j - 1] == cells[j + 1])
+                first[j] = 1;
+            else
+                first[j] = 0;
+        }
+        int count = 1;
+
+        N -= 1;
+
+        for (int i = 0; i < 8; i++)
             cells[i] = first[i];
-        
-        while(N-- > 0){
-            int[] temp = new int[8];
+
+        while (N-- > 0) {
+            final int[] temp = new int[8];
             
             for(int j=1;j<7;j++)
             {

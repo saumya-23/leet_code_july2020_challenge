@@ -1,0 +1,49 @@
+QUESTION:
+
+There are 8 prison cells in a row, and each cell is either occupied or vacant.
+Each day, whether the cell is occupied or vacant changes according to the following rules:
+
+If a cell has two adjacent neighbors that are both occupied or both vacant, then the cell becomes occupied.
+Otherwise, it becomes vacant.
+
+(Note that because the prison is a row, the first and the last cells in the row can't have two adjacent neighbors.)
+We describe the current state of the prison in the following way: cells[i] == 1 if the i-th cell is occupied, else cells[i] == 0.
+
+Given the initial state of the prison, return the state of the prison after N days (and N such changes described above.)
+
+Example 1:
+
+Input: cells = [0,1,0,1,1,0,0,1], N = 7
+Output: [0,0,1,1,0,0,0,0]
+Explanation: 
+The following table summarizes the state of the prison on each day:
+Day 0: [0, 1, 0, 1, 1, 0, 0, 1]
+Day 1: [0, 1, 1, 0, 0, 0, 0, 0]
+Day 2: [0, 0, 0, 0, 1, 1, 1, 0]
+Day 3: [0, 1, 1, 0, 0, 1, 0, 0]
+Day 4: [0, 0, 0, 0, 0, 1, 0, 0]
+Day 5: [0, 1, 1, 1, 0, 1, 0, 0]
+Day 6: [0, 0, 1, 0, 1, 1, 0, 0]
+Day 7: [0, 0, 1, 1, 0, 0, 0, 0]
+
+
+SOLUTION :
+
+Need to follow 2 conditions : 
+
+1) If cell's right and left cell have "same" number, then value becomes 1.
+2) Otherwise 0.
+
+One solution is to apply for loop of N days.But time complexity will get exceed.
+So you notice that after k days such that (k<N), it will start repeating the sequence.
+It means we can then skip that much number of days.
+N = N/k;
+
+ALGO:
+
+1) Store the sequence after 1 day in separate array.
+2) Apply while loop till N>0.
+3) Apply for loop from i=2 to i less than N.
+4) Create a temp array.Generate sequence of next day.
+5) Check temp array and first array each time.
+6) If it matches, modify the value of N to (N%count), where count is the variable increment after each iteration.

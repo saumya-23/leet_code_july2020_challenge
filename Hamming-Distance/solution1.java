@@ -42,3 +42,17 @@ class Solution {
         return binaryNum;
     }
 }
+
+
+
+// EXPLANATION
+/*
+
+Convert both numbers in binary.
+Check if there length are same.
+If same, 
+        Simply apply a for loop and increment the counter if bits are not same.
+else,
+    Count the diff between length, and add respective 0 to lesser number.
+    Then check for each bit.
+*/

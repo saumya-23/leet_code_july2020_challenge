@@ -17,7 +17,7 @@ class Solution {
                                         next_multiple_of_5)); 
               
             ugly[i] = next_ugly_no; 
-            if (next_ugly_no == next_multiple_of_2) 
+            if (next_ugly_no == next_multiple_of_2)
             { 
                i2 = i2+1; 
                next_multiple_of_2 = ugly[i2]*2; 
